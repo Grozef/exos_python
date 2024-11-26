@@ -2,10 +2,10 @@ import re
 
 # Fonctions utilitaires pour lire et écrire dans le fichier
 def lire_fichier(fichier):
-    """
-    Lit le contenu d'un fichier et retourne les lignes sous forme de liste.
-    Si le fichier n'existe pas, retourne une liste vide.
-    """
+
+    # Lit le contenu d'un fichier et retourne les lignes sous forme de liste.
+    # Si le fichier n'existe pas, retourne une liste vide.
+
     try:
         with open(fichier, "r") as f:
             return f.readlines()
@@ -13,23 +13,23 @@ def lire_fichier(fichier):
         return []
 
 def ecrire_fichier(fichier, contacts):
-    """
-    Écrit une liste de contacts dans le fichier en remplaçant son contenu.
-    """
+
+    # Écrit une liste de contacts dans le fichier en remplaçant son contenu.
+
     with open(fichier, "w") as f:
         f.writelines(contacts)
 
 def is_valid_email(email):
-    """
-    Vérifie si une adresse email est valide à l'aide d'une expression régulière.
-    """
+
+    # Vérifie si une adresse email est valide à l'aide d'une expression régulière.
+
     return re.match(r"[^@]+@[^@]+\.[^@]+", email) is not None
 
 # Fonction pour ajouter un nouveau contact
 def ajouter_contact():
-    """
-    Ajoute un contact dans le fichier après vérification des doublons et validation de l'email.
-    """
+
+    # Ajoute un contact dans le fichier après vérification des doublons et validation de l'email.
+
     nom = input("Entrez le nom : ").strip()
     prenom = input("Entrez le prénom : ").strip()
     email = input("Entrez l'adresse email : ").strip()
@@ -54,9 +54,9 @@ def ajouter_contact():
 
 # Fonction pour lire et afficher tous les contacts
 def lire_contacts():
-    """
-    Affiche tous les contacts présents dans le fichier de manière formatée.
-    """
+
+    # Affiche tous les contacts présents dans le fichier de manière formatée.
+
     contacts = lire_fichier("contacts.txt")
     if not contacts:
         print("Aucun contact à afficher.")
@@ -70,9 +70,9 @@ def lire_contacts():
 
 # Fonction pour trier les contacts
 def trier_contacts():
-    """
-    Trie les contacts par nom, prénom ou email selon le choix de l'utilisateur.
-    """
+
+    # Trie les contacts par nom, prénom ou email selon le choix de l'utilisateur.
+
     contacts = lire_fichier("contacts.txt")
     if not contacts:
         print("Aucun contact à trier.")
@@ -88,17 +88,17 @@ def trier_contacts():
 
 # Fonction pour compter le nombre de contacts
 def compter_contacts():
-    """
-    Compte et affiche le nombre de contacts présents dans le fichier.
-    """
+
+    # Compte et affiche le nombre de contacts présents dans le fichier.
+
     contacts = lire_fichier("contacts.txt")
     print(f"Il y a {len(contacts)} contacts dans le fichier.")
 
 # Fonction pour rechercher un contact par nom
 def rechercher_contact():
-    """
-    Recherche un contact par nom de manière insensible à la casse.
-    """
+
+    # Recherche un contact par nom de manière insensible à la casse.
+
     nom = input("Entrez le nom à rechercher : ").strip().lower()
     contacts = lire_fichier("contacts.txt")
 
@@ -112,9 +112,9 @@ def rechercher_contact():
 
 # Fonction pour modifier un contact
 def modifier_contact():
-    """
-    Permet de modifier les informations d'un contact existant.
-    """
+
+    # Permet de modifier les informations d'un contact existant.
+
     nom = input("Entrez le nom du contact à modifier : ").strip()
     contacts = lire_fichier("contacts.txt")
 
@@ -138,9 +138,9 @@ def modifier_contact():
 
 # Fonction pour supprimer un contact
 def supprimer_contact():
-    """
-    Supprime un contact du fichier après confirmation.
-    """
+
+    # Supprime un contact du fichier après confirmation.
+
     nom = input("Entrez le nom du contact à supprimer : ").strip()
     contacts = lire_fichier("contacts.txt")
 
@@ -160,9 +160,7 @@ def supprimer_contact():
 
 # Menu principal
 def main():
-    """
-    Menu principal du programme qui permet de naviguer entre les différentes fonctionnalités.
-    """
+    
     while True:
         print("\nMenu:")
         print("1. Ajouter un contact")
@@ -199,3 +197,14 @@ def main():
 # Exécution du programme principal
 if __name__ == "__main__":
     main()
+
+"""
+
+README : 
+lancer le terminal
+allez dans le dossier du script python
+ici : cd C:\Users\fLisowski\Desktop\python -> mettez le chemin vers votre dossier a l'emplacement que vous lui avez attibué
+tapez la commande suivante dans le terminal pour lancer le mini programme
+python calculette.py
+
+"""
