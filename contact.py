@@ -59,7 +59,6 @@ def ajouter_contact():
 
 # Fonction pour lire et afficher tous les contacts
 def lire_contacts():
-
     """
     Affiche tous les contacts présents dans le fichier de manière formatée.
     """
@@ -68,12 +67,11 @@ def lire_contacts():
     if not contacts:
         print("Aucun contact à afficher.")
         return
-
-    print(f"\n{'Nom':<15} {'Prénom':<15} {'Email'}")
-    print("-" * 40)
+    
     for contact in contacts:
         nom, prenom, email = contact.strip().split(", ")
-        print(f"{nom:<15} {prenom:<15} {email}")
+        print(f"Nom : {nom}, Prénom : {prenom}, Email : {email}")
+
 
 # Fonction pour trier les contacts
 def trier_contacts():
