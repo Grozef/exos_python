@@ -1,0 +1,159 @@
+PS C:\Users\fLisowski\Desktop\Evaluation Algo - Gestion des contacts> python contact.py
+
+Menu:
+1. Ajouter un contact
+2. Lire les contacts
+3. Trier les contacts
+4. Compter les contacts
+5. Rechercher un contact
+6. Modifier un contact
+7. Supprimer un contact
+8. Quitter
+Entrez votre choix : 2
+Nom : Baba, Prénom : Babab, Email : baba@proton.me
+Nom : Marque, Prénom : Leo, Email : leo@gmail.com
+Nom : aa, Prénom : yyy, Email : yyy@gmail.com
+Nom : bb, Prénom : bbb, Email : bbb@gmail.commande
+Nom : lala, Prénom : lyly, Email : hjgjhhjk@gmail.com
+Nom : lele, Prénom : uuuu, Email : uuu@gmail.com
+Nom : lolo, Prénom : lololo, Email : lolo@gmail.com
+Nom : lui, Prénom : lui, Email : lui@gmail.com
+Nom : lyly, Prénom : lylyly, Email : lyly@gmail.com
+Nom : Mama, Prénom : mamam, Email : mama@proton.me
+
+Menu:
+1. Ajouter un contact
+2. Lire les contacts
+3. Trier les contacts
+4. Compter les contacts
+5. Rechercher un contact
+6. Modifier un contact
+7. Supprimer un contact
+8. Quitter
+Entrez votre choix : 1
+Entrez le nom : Michel
+Entrez le prénom : Bierequejaime
+Entrez l'adresse email : karmeliet@gmail.com
+Contact ajouté avec succès.
+
+Menu:
+1. Ajouter un contact
+2. Lire les contacts
+3. Trier les contacts
+4. Compter les contacts
+5. Rechercher un contact
+6. Modifier un contact
+7. Supprimer un contact
+8. Quitter
+Entrez votre choix : 3
+Trier alphabetiquement par nom, prénom ou email : nom
+Contacts triés avec succès.
+
+Menu:
+1. Ajouter un contact
+2. Lire les contacts
+3. Trier les contacts
+4. Compter les contacts
+5. Rechercher un contact
+6. Modifier un contact
+7. Supprimer un contact
+8. Quitter
+Entrez votre choix : 2
+Nom : Baba, Prénom : Babab, Email : baba@proton.me
+Nom : Mama, Prénom : mamam, Email : mama@proton.me
+Nom : Marque, Prénom : Leo, Email : leo@gmail.com
+Nom : Michel, Prénom : Bierequejaime, Email : karmeliet@gmail.com
+Nom : aa, Prénom : yyy, Email : yyy@gmail.com
+Nom : bb, Prénom : bbb, Email : bbb@gmail.commande
+Nom : lala, Prénom : lyly, Email : hjgjhhjk@gmail.com
+Nom : lele, Prénom : uuuu, Email : uuu@gmail.com
+Nom : lolo, Prénom : lololo, Email : lolo@gmail.com
+Nom : lui, Prénom : lui, Email : lui@gmail.com
+Nom : lyly, Prénom : lylyly, Email : lyly@gmail.com
+
+Menu:
+1. Ajouter un contact
+2. Lire les contacts
+3. Trier les contacts
+4. Compter les contacts
+5. Rechercher un contact
+6. Modifier un contact
+7. Supprimer un contact
+8. Quitter
+Entrez votre choix : 5
+Entrez le nom à rechercher : mama
+Nom : Mama, Prénom : mamam, Email : mama@proton.me
+
+Menu:
+1. Ajouter un contact
+2. Lire les contacts
+3. Trier les contacts
+4. Compter les contacts
+5. Rechercher un contact
+6. Modifier un contact
+7. Supprimer un contact
+8. Quitter
+Entrez votre choix : 4
+Il y a 11 contacts dans le fichier.
+
+Menu:
+1. Ajouter un contact
+2. Lire les contacts
+3. Trier les contacts
+4. Compter les contacts
+5. Rechercher un contact
+6. Modifier un contact
+7. Supprimer un contact
+8. Quitter
+Entrez votre choix : 6
+Entrez le nom du contact à modifier : mama
+Entrez le nouveau prénom : kjbkhj
+Entrez la nouvelle adresse email : kjhkjhkj@free.fr
+Contact modifié avec succès.
+
+Menu:
+1. Ajouter un contact
+2. Lire les contacts
+3. Trier les contacts
+4. Compter les contacts
+5. Rechercher un contact
+6. Modifier un contact
+7. Supprimer un contact
+8. Quitter
+Entrez votre choix : 2
+Nom : Baba, Prénom : Babab, Email : baba@proton.me
+Nom : mama, Prénom : kjbkhj, Email : kjhkjhkj@free.fr
+Nom : Marque, Prénom : Leo, Email : leo@gmail.com
+Nom : Michel, Prénom : Bierequejaime, Email : karmeliet@gmail.com
+Nom : aa, Prénom : yyy, Email : yyy@gmail.com
+Nom : bb, Prénom : bbb, Email : bbb@gmail.commande
+Nom : lala, Prénom : lyly, Email : hjgjhhjk@gmail.com
+Nom : lele, Prénom : uuuu, Email : uuu@gmail.com
+Nom : lolo, Prénom : lololo, Email : lolo@gmail.com
+Nom : lui, Prénom : lui, Email : lui@gmail.com
+Nom : lyly, Prénom : lylyly, Email : lyly@gmail.com
+
+Menu:
+1. Ajouter un contact
+2. Lire les contacts
+3. Trier les contacts
+4. Compter les contacts
+5. Rechercher un contact
+6. Modifier un contact
+7. Supprimer un contact
+8. Quitter
+Entrez votre choix : 7
+Entrez le nom du contact à supprimer : lui
+Êtes-vous sûr de vouloir supprimer lui ? (oui/non) : oui
+Contact supprimé avec succès.
+
+Menu:
+1. Ajouter un contact
+2. Lire les contacts
+3. Trier les contacts
+4. Compter les contacts
+5. Rechercher un contact
+6. Modifier un contact
+7. Supprimer un contact
+8. Quitter
+Entrez votre choix : 8
