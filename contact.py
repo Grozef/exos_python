@@ -1,6 +1,7 @@
 import re
 
 # Fonctions pour lire et écrire dans le fichier
+# Ne pas oubleir d egerer les exeptions
 def lire_fichier(fichier):
 
     """
@@ -19,12 +20,13 @@ def ecrire_fichier(fichier, contacts):
     """
     Écrit une liste de contacts dans le fichier en remplaçant son contenu.
     """
+    
     with open(fichier, "w") as f:
         f.writelines(contacts)
 
 def is_valid_email(email):
     """
-    Vérifie si une adresse email est valide à l'aide d'une expression régulière.
+    Vérifie si une adresse email est valide à l'aide d'une expression régulière. Merci Regex.
     """
 
     return re.match(r"[^@]+@[^@]+\.[^@]+", email) is not None
@@ -77,7 +79,7 @@ def lire_contacts():
 def trier_contacts():
 
     """
-    Trie les contacts par nom, prénom ou email selon le choix de l'utilisateur.
+    Trie les contacts alphabetiquement, par nom, prénom ou email selon le choix de l'utilisateur.
     """
 
     contacts = lire_fichier("contacts.txt")
@@ -86,7 +88,7 @@ def trier_contacts():
         return
 
     # Demande à l'utilisateur le critère de tri
-    critere = input("Trier par nom, prénom ou email : ").lower()
+    critere = input("Trier alphabetiquement par nom, prénom ou email : ").lower()
     index = {"nom": 0, "prenom": 1, "email": 2}.get(critere, 0)
     contacts.sort(key=lambda x: x.split(", ")[index])
 
@@ -209,8 +211,6 @@ def main():
 # Exécution du programme principal
 if __name__ == "__main__":
     main()
-
-
 
 # README : 
 # lancer le terminal

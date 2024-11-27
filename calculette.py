@@ -1,3 +1,27 @@
+# print("Calculette")
+# resultat = float(input("Saisir un nombre : "))
+# while True:
+#     operation = str(input("Saisir une operation : + - * / ou 'stop' pour arreter "))
+#     while operation != '+' and operation != '-' and operation != '*' and operation != '/' and operation != 'stop':
+#         print("Saisie incorrecte")
+#         operation = str(input("Saisir une operation : + - * / ou stop pour arreter "))
+#     if operation == 'stop':
+#         break
+#     else:
+#         n = float(input("Saisir un nombre : "))
+#         if operation == '/':
+#             while n == 0:
+#                 print("0 non admis - Ressaisir : ")
+#                 n = float(input("Saisir un nombre : "))
+#             resultat = resultat / n
+#         elif operation == '+':
+#             resultat = resultat + n
+#         elif operation == '-':
+#             resultat = resultat - n
+#         else:
+#             resultat = resultat * n
+#         print("Le resultat est :", resultat)
+        
 def calculette():
     print("Bienvenue dans la calculatrice !")
     print("Vous pouvez effectuer des opérations arithmétiques de base.")

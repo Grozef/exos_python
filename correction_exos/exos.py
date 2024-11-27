@@ -564,3 +564,341 @@ def tester_recherche():
 
 tester_recherche()
 
+# Exercices Sequence 3 - Correction Python
+
+# -1-
+
+# print("Calculette")
+# resultat = float(input("Saisir un nombre : "))
+# while True:
+#     operation = str(input("Saisir une operation : + - * / ou 'stop' pour arreter "))
+#     while operation != '+' and operation != '-' and operation != '*' and operation != '/' and operation != 'stop':
+#         print("Saisie incorrecte")
+#         operation = str(input("Saisir une operation : + - * / ou stop pour arreter "))
+#     if operation == 'stop':
+#         break
+#     else:
+#         n = float(input("Saisir un nombre : "))
+#         if operation == '/':
+#             while n == 0:
+#                 print("0 non admis - Ressaisir : ")
+#                 n = float(input("Saisir un nombre : "))
+#             resultat = resultat / n
+#         elif operation == '+':
+#             resultat = resultat + n
+#         elif operation == '-':
+#             resultat = resultat - n
+#         else:
+#             resultat = resultat * n
+#         print("Le resultat est :", resultat)
+
+
+# -2-
+
+# print("Tri - Bubble Sort")
+ 
+# def tri_a_bulles(tableau):
+#     l = len(tableau)
+#     # Je lis tous les eléments du tableau
+#     for i in range(l):
+#         for j in range(0, l-i-1):
+#             # On echange les elements si l'element lu est superieur au suivant
+#             if tableau[j] > tableau[j+1] :
+#                 tableau[j], tableau[j+1] = tableau[j+1], tableau[j]
+
+# # Soit le tableau suivant
+# tableau = [63, 23, 15, 69, 8, 5, 22, 33, 99, 97]
+
+# l = len(tableau)
+# print ("Le tableau initial est :")
+# for i in range(l):
+
+#     print (tableau[i])
+
+# tri_a_bulles(tableau)
+
+# print ("Le tableau apres le tri a bulles est devenu : ")
+# for i in range(l):
+#     print (tableau[i])
+
+
+# -3-
+
+# 1ere version
+
+# # Factorielle simple
+# def factorielle(v): 
+#     if v < 0: 
+#         print("La factorielle d'un nombre negatif n'existe pas")
+#     elif v == 0: 
+#         return 1
+#     else: 
+#         f = 1
+#         while(v > 1): 
+#             f *= v 
+#             v -= 1
+#         return f
+
+# # Algorithme principal
+# v = int(input("Saisir un entier : "))
+# print("La factorielle de",v,"est", factorielle(v))
+
+# 2eme version
+
+# # Factorielle recursive
+# def factorielle(n):
+#     if n == 0:
+#         return 1
+#     else:
+#         return n * factorielle(n-1)
+
+# # Algorithme principal
+# v = int(input("Saisir un entier : "))
+# print("La factorielle de",v,"est", factorielle(v)) 
+
+# -4-
+
+# 1ere version
+
+# nb = int(input("Saisir le nombre d'entiers a afficher : "))
+# a = 0
+# b = 1
+# total = 0
+
+# print("Les", nb, "premiers entiers de la suite de Fibonacci sont :")
+# for n in range(nb):
+#   print(total, end = " ")
+#   a = b
+#   b = total
+#   total = a + b
+
+# 2eme version
+
+# nb = int(input("Saisir le nombre d'entiers a afficher : "))
+
+# def fibonacci_recursive(n):
+#    if n <= 1:
+#        return n
+#    else:
+#        return fibonacci_recursive(n - 2) + fibonacci_recursive(n - 1)
+
+# # Algorithme principal
+# print("Les", nb, "premiers entiers de la suite de Fibonacci sont :")
+# for i in range(nb):
+#     print(fibonacci_recursive(i), end = " ")
+
+# -5-
+
+# Luhn CB
+
+# def verif_carte(numero_carte):
+#     # On transforme le numero de la carte saisie en un tableau d'entiers
+#     tableau = [int(i) for i in str(numero_carte)]
+
+#     # On parcourt le tableau de droite a gauche en partant de l'avant dernier chiffre
+#     for i in range(len(tableau) - 2, -1, -2):
+#         tableau[i] *= 2
+#         if tableau[i] > 9:
+#             tableau[i] -= 9
+
+#     # len(tableau) - 2 : valeur de depart de la sequence
+#     # len(tableau) donne la longueur du tableau
+#     # len(tableau) - 2 enleve 2 a cette longueur
+#     # donc on commence a l'indice correspondant a l'avant-dernier element du tableau
+#     # 
+#     # -1 : valeur de fin de la sequence
+#     # la sequence se termine avant d'atteindre l'indice -1
+#     # donc elle s'arrête juste avant le premier element du tableau
+#     # 
+#     # -2 : c'est le pas de la sequence, c'est-a-dire l'increment entre chaque 
+#     # element de la sequence. En specifiant -2, on itere sur chaque deuxieme 
+#     # indice en partant de l'avant-dernier jusqu'au premier.
+
+#     # On calcule la somme des chiffres
+#     total = sum(tableau)
+
+#     # La carte est valide si la somme des chiffres est un multiple de 10
+#     return total % 10 == 0
+
+# # Exemple d'utilisation
+# # carte_valide = verif_carte("4532015112830366")
+# carte_saisie = int(input("Saisir votre numero de carte bancaire : "))
+# carte_valide = verif_carte(carte_saisie)
+# if carte_valide:
+#     print("La carte bancaire est valide.")
+# else:
+#     print("La carte bancaire n'est pas valide.")
+
+# Luhn ISBN
+
+# def verif_isbn(isbn):
+#     # On supprime les eventuels tirets
+#     isbn = isbn.replace('-', '')
+
+#     # On verifie si la longueur est correcte
+#     if len(isbn) != 13:
+#         return False
+
+#     # On convertir le numero ISBN en un tableau d'entiers
+#     tableau = [int(i) for i in isbn]
+
+#     # On appliquer l'algorithme de Luhn en doublant chaque deuxieme chiffre
+#     for i in range(0, len(tableau), 2):
+#         tableau[i] *= 2
+
+#     # On calcule la somme des chiffres
+#     total = sum(tableau)
+
+#     # On verifie si le total est un multiple de 10
+#     return total % 10 == 0
+
+# # Exemple
+# #isbn = "978-3-16-148410-0"
+# isbn = "978-2-416-01545-8"
+# if verif_isbn(isbn):
+#     print("Le numero ISBN est valide")
+# else:
+#     print("Le numero ISBN n'est pas valide")
+
+# # La fonction verif_isbn prend en entree un numero ISBN-13 sous forme d'une
+# # chaîne de caracteres. Elle supprime les tirets eventuels puis verifie si 
+# # la longueur # du numero est correcte (13 chiffres). 
+# # Ensuite, elle applique l'algorithme de Luhn, en doublant chaque deuxieme chiffre,
+# # et verifie si le total est un multiple de 10. 
+# # Si c'est le cas, la fonction retourne True, indiquant que le numero ISBN-13 
+# # est valide selon l'algorithme de Luhn, sinon elle retourne False.
+
+# -6-
+
+# 1ere version
+
+# def decalage(c,k):
+#     # decale une lettre majuscule. Les autres caracteres ne sont pas modifies
+#     car = ord(c.upper())
+#     car += k
+#     while car > 90:
+#         car -= 26
+#     while car < 65:
+#         car += 26
+#     return chr(car)
+
+# def cesar(message,d,crypte):
+#     # effectue le decalage d sur les caracteres de message
+#     chiffre=''
+#     for c in message:
+#         if crypte:
+#             chiffre += decalage(c,d)
+#         else:
+#             chiffre += decalage(c,-d)
+
+#     return chiffre
+
+# # Algorithme principal
+# texte = str(input("Saisir un texte : "))
+# decal = int(input("Saisir un decalage : "))
+# # Je transforme le message
+# print("Message : ")
+# texte_code = cesar(texte,decal,True)
+# print(texte_code)
+# # Je reviens au message d'origine
+# texte_decode = cesar(texte_code,decal,False)
+# print("Message d'origine : ")
+# print(texte_decode)
+
+# 2eme version
+
+# def chiffre_de_cesar(message, decalage):
+#     resultat = ""
+
+#     for lettre in message:
+#         if lettre.isalpha():  # Verifier si la lettre est alphabetique
+#             if lettre.isupper():
+#                 resultat += chr((ord(lettre) + decalage - 65) % 26 + 65)
+#             else:
+#                 resultat += chr((ord(lettre) + decalage - 97) % 26 + 97)
+#         else:
+#             resultat += lettre
+
+#     return resultat
+
+# # Exemple d'utilisation
+# message_original = "Bonjour, ceci est un exemple de chiffre de Cesar!"
+# decalage = 3
+
+# message_chiffre = chiffre_de_cesar(message_original, decalage)
+# print("Message original:", message_original)
+# print("Message chiffre:", message_chiffre)
+
+# 3eme version
+
+# #!/usr/bin/env python3 
+# # coding: utf-8 
+  
+# # Fonction de chiffrement/dechiffrement 
+# def cesar(msg="", clef=0): 
+# 	alphabet="abcdefghijklmnopqrstuvwxyz" 
+# 	chiffre="" 
+  
+# 	# On prend chaque lettre du mot (converti en minuscules) 
+# 	for l in msg.lower(): 
+# 		# On recherche la position de la lettre dans l'alphabet 
+# 		pos=alphabet.find(l) 
+  
+# 		# Si la lettre est presente 
+# 		if pos != -1: 
+# 			# On recupere la lettre decalee dans l'alphabet (on boucle si depassement) 
+# 			chiffre+=alphabet[(pos+clef) % len(alphabet)] 
+# 		else: 
+# 			# Sinon on prend la lettre originelle 
+# 			chiffre+=l 
+# 		# if 
+# 	# for 
+# 	return chiffre 
+# # cesar() 
+  
+# message="Hello World !!!" 
+# chiffre=cesar(message, 5) 
+# dechiffre=cesar(chiffre, -5) 
+# print(message, "=>", chiffre, "=>", dechiffre)
+
+# -7-
+
+# # fonction de recherche dichotomique appelee dans le corps principal de l'algorithme
+# def recherche_dichotomique(e, tableau):
+# 	milieu = 0
+# 	debut = 0
+# 	fin = len(tableau) - 1
+	
+# 	while debut <= fin:
+
+# 		# on fait une division entiere pour ne pas avoir un milieu de tableau au format float
+# 		milieu = (debut + fin) // 2
+
+# 		# 1ere hypothese : x est superieur a l'element milieu du tableau
+# 		# on se positionne dans la partie superieure du tableau par rapport a la variable milieu
+# 		if tableau[milieu] < e:
+# 			debut = milieu + 1
+
+# 		# 2eme hypothese : x est inferieur a l'element milieu du tableau
+# 		# on se positionne dans la partie inferieure du tableau par rapport à la variable milieu
+# 		elif tableau[milieu] > e:
+# 			fin = milieu - 1
+
+# 		# x est dans le tableau a la position milieu
+# 		else: 
+# 			return milieu
+
+# 	# x ne se trouve pas dans le tableau
+# 	return -1
+
+# # algorithme principal
+# tableau = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+# print (tableau)
+# e = int(input("Saisir un entier : "))
+
+# retour = recherche_dichotomique(e, tableau)
+
+# if retour != -1:
+# 	print(e, "est present dans le tableau - Position ", retour + 1)
+# else:
+# 	print(e, "ne se trouve pas dans le tableau")
